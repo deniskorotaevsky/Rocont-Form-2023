@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-    <title>Привет SASS(SCSS)!</title>
+    <title>Rocont Form 2023</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 </head>
@@ -13,17 +13,68 @@
             <div class="logo">
                 <img src="./img/logo.png" />
             </div>
-            <div container-form>
-
+            <div class="container-form">
                 <h1>Стать партнером</h1>
+                <p>Мы с радостью проконсультируем Вас по продукту и предложим подходящий варинат решения!</p>
+                <div class="form-box">
 
+
+
+                    <form id="form" action="/">
+                        <div class="input-control">
+                            <label for="surname">Фамилия</label>
+                            <input id="surname" name="surname" type="text" placeholder="Иванов">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="username">Имя</label>
+                            <input id="username" name="username" type="text" placeholder="Иван">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="fathername">Отчество</label>
+                            <input id="fathername" name="fathername" type="text" placeholder="Иванович">
+                            <div class="error"></div>
+                        </div>
+
+                        <div class="input-control">
+                            <label for="phone">Телефон</label>
+                            <input type="text" name="phone" placeholder="+7 (XXX) XXX XX - XX" maxlength="13"
+                                id="phone">
+                            <div class="error"></div>
+                        </div>
+
+
+                        <div class="input-control">
+                            <div class="select-wrapper">
+                                <p>Город</p>
+                                <select id="select" class="select">
+                                    <option placeholder="+7 (XXX) XXX XX - XX">Москва</option>
+                                    <option>Санкт-Петербург</option>
+                                </select>
+                                <div class="error"></div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="input-control">
+                            <input type="checkbox" id="checkConfirmation">
+                            <label for="checkConfirmation" class="checkConfirmation">Нажимая кнопку «отправить», вы даете согласие на обработку <span>персональных данных.</span></label>
+                        </div> -->
+                        <button type="submit">Отправить</button>
+                    </form>
+
+
+
+
+
+
+                </div>
             </div>
-
-
         </div>
-
     </div>
-
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
