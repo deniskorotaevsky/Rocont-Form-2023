@@ -130,27 +130,32 @@ body {
   font-size: 55px;
   margin: 56px 0 10px;
 }
-.container .container-box .container-form p {
+.container .container-box .container-form > p {
   width: 363px;
 }
-.container .container-box .container-form #form {
+.container .container-box .container-form .form-box #form {
   width: 400px;
   margin-top: 30px;
   border-radius: 5px;
   /* Custom Checkbox */
 }
-.container .container-box .container-form #form button {
-  padding: 11px 50px;
-  max-height: 45px;
+.container .container-box .container-form .form-box #form button {
+  padding: 15px 54px;
   color: #ABABAB;
   background: none;
   border: none;
-  border-radius: 4px;
-  font-size: 15px;
+  border-radius: 5px;
   border: 1px solid #00BCD0;
   cursor: pointer;
+  font-size: 20px;
 }
-.container .container-box .container-form #form .input-control {
+.container .container-box .container-form .form-box #form .input-control.error input {
+  border-color: #ff3860;
+}
+.container .container-box .container-form .form-box #form .input-control.success input {
+  border-color: #09c372;
+}
+.container .container-box .container-form .form-box #form .input-control {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -160,35 +165,38 @@ body {
           flex-direction: column;
   margin-bottom: 16px;
 }
-.container .container-box .container-form #form .input-control .select-wrapper {
-  position: relative;
-}
-.container .container-box .container-form #form .input-control .select-wrapper > p {
+.container .container-box .container-form .form-box #form .input-control > p {
   margin-bottom: 9px;
 }
-.container .container-box .container-form #form .input-control .select-wrapper select {
+.container .container-box .container-form .form-box #form .input-control input {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
   font-size: 15px;
   padding: 15px;
   width: 100%;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
 }
-.container .container-box .container-form #form .input-control .select-wrapper select option {
-  color: #000;
-  border: 1px solid red;
+.container .container-box .container-form .form-box #form .input-control input:focus {
+  outline: 0;
 }
-.container .container-box .container-form #form .input-control .select-wrapper select option [value=""][disabled] {
-  display: none;
-  border: 1px solid red;
+.container .container-box .container-form .form-box #form .input-control .success input {
+  border-color: #09c372;
 }
-.container .container-box .container-form #form .input-control .select-wrapper select:required:invalid {
-  color: grey;
+.container .container-box .container-form .form-box #form .input-control .error input {
+  border-color: #ff3860;
 }
-.container .container-box .container-form #form .input-control .select-wrapper:before {
+.container .container-box .container-form .form-box #form .input-control .error {
+  color: #ff3860;
+  font-size: 9px;
+  height: 13px;
+}
+.container .container-box .container-form .form-box #form .input-control label {
+  margin-bottom: 9px;
+}
+.container .container-box .container-form .form-box #form .input-control .select-wrapper {
+  position: relative;
+}
+.container .container-box .container-form .form-box #form .input-control .select-wrapper:before {
   content: "";
   position: absolute;
   top: 45.4545454545%;
@@ -199,7 +207,7 @@ body {
   height: 1px;
   pointer-events: none;
 }
-.container .container-box .container-form #form .input-control .select-wrapper:after {
+.container .container-box .container-form .form-box #form .input-control .select-wrapper:after {
   content: "";
   position: absolute;
   top: 58.4415584416%;
@@ -210,55 +218,48 @@ body {
   height: 1px;
   pointer-events: none;
 }
-.container .container-box .container-form #form .input-control input {
+.container .container-box .container-form .form-box #form .input-control .select-wrapper select {
   border: 2px solid #f0f0f0;
   border-radius: 4px;
   display: block;
   font-size: 15px;
   padding: 15px;
   width: 100%;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
-.container .container-box .container-form #form .input-control input:focus {
-  outline: 0;
+.container .container-box .container-form .form-box #form .input-control .select-wrapper select option {
+  color: #000;
+  border: 1px solid red;
 }
-.container .container-box .container-form #form .input-control .success input {
-  border-color: #09c372;
+.container .container-box .container-form .form-box #form .input-control .select-wrapper select option [value=""][disabled] {
+  display: none;
+  border: 1px solid red;
 }
-.container .container-box .container-form #form .input-control .error input {
-  border-color: #ff3860;
-}
-.container .container-box .container-form #form .input-control .error {
-  color: #ff3860;
-  font-size: 9px;
-  height: 13px;
-}
-.container .container-box .container-form #form .input-control label {
-  margin-bottom: 9px;
-}
-.container .container-box .container-form #form .input-control .errorPhone {
+.container .container-box .container-form .form-box #form .input-control .errorPhone {
   margin-top: 2px;
   font-style: 12px;
   color: red;
 }
-.container .container-box .container-form #form .container__file {
+.container .container-box .container-form .form-box #form .container__file {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 50px;
+  margin: 20px;
   margin-left: 0;
-  font-size: 15px;
 }
-.container .container-box .container-form #form .container__file [type=file] {
+.container .container-box .container-form .form-box #form .container__file [type=file] {
   display: none;
 }
-.container .container-box .container-form #form .container__file label {
+.container .container-box .container-form .form-box #form .container__file label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   position: relative;
   color: #d10000;
 }
-.container .container-box .container-form #form .container__file .container__file_column {
+.container .container-box .container-form .form-box #form .container__file .container__file_column {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,16 +268,32 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.container .container-box .container-form #form .container__file .input-file-li_row {
+.container .container-box .container-form .form-box #form .container__file .container__file_column img {
+  margin-right: 13px;
+}
+.container .container-box .container-form .form-box #form .container__file .container__file_column .files-list {
+  height: 40px;
+  overflow: auto;
+  font-size: 15px;
+}
+.container .container-box .container-form .form-box #form .container__file .container__file_column .input-file-li_row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin: 5px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.container .container-box .container-form #form .container__file .input-file-li_row img {
-  margin-right: 5px;
+.container .container-box .container-form .form-box #form .container__file .container__file_column .input-file-li_row li {
+  margin: 5px 0;
 }
-.container .container-box .container-form #form #form-check {
+.container .container-box .container-form .form-box #form .container__file .container__file_column .input-file-li_row img {
+  margin-right: 10px;
+  width: 13px;
+  height: 17px;
+}
+.container .container-box .container-form .form-box #form #form-check {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,7 +302,7 @@ body {
           align-items: center;
   margin-top: 10px;
 }
-.container .container-box .container-form #form #form-check label {
+.container .container-box .container-form .form-box #form #form-check label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -294,7 +311,7 @@ body {
           align-items: center;
   cursor: pointer;
 }
-.container .container-box .container-form #form #form-check label:before {
+.container .container-box .container-form .form-box #form #form-check label:before {
   content: "";
   border: 1px solid #000000;
   height: 22px;
@@ -302,15 +319,15 @@ body {
   border-radius: 5px;
   margin-right: 11px;
 }
-.container .container-box .container-form #form #form-check label span {
+.container .container-box .container-form .form-box #form #form-check label span {
   color: #00BCD0;
 }
-.container .container-box .container-form #form #form-check input {
+.container .container-box .container-form .form-box #form #form-check input {
   cursor: pointer;
   opacity: 0;
   position: absolute;
 }
-.container .container-box .container-form #form #form-check input:checked + label::before {
+.container .container-box .container-form .form-box #form #form-check input:checked + label::before {
   content: "✔";
   color: #00BCD0;
   display: -webkit-box;
@@ -322,12 +339,4 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.invalid {
-  border-color: rgb(11, 40, 167);
-}
-
-#error {
-  color: rgb(11, 40, 167);
 }

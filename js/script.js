@@ -64,20 +64,32 @@ let numOfFiles = document.getElementById("num-of-files");
 
 const comment = [];
 
-fileInput.addEventListener("change", () => {
-    let value = fileInput.value;
-    comment.push(value);
+fileInput.addEventListener('change', function () {
+    for (let i = 0; i < fileInput.files.length; i++) {
+        comment.push(fileInput.files[i].name);
+        console.log(fileInput.files[i].name)
+        draw()
+    }
+});
+
+function deleteCurrentFile(thisElement) {
+    let currentIndex = thisElement.id;
+    let crop = currentIndex.split('_')[1];
+    if (crop <= comment.length) {
+        comment.splice(crop, 1)
+    }
     draw()
-})
+}
 
 function draw() {
     let out = '';
     for (let i = 0; i < comment.length; i++) {
         out += `
-        <div class="input-file-li_row">
-        <img src="./img/basket.png" /> <li>${comment[i]}</li>
+        <div class="input-file-li_row" id="buttonBusket_${i}" onclick="deleteCurrentFile(this)">
+                <img src="./img/basket.png" />
+                <li>${comment[i]}</li>
         </div>
         `
     }
     fileList.innerHTML = out
-}
+};
