@@ -5,9 +5,11 @@
     <title>Rocont Form 2023</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
 </head>
 
 <body>
+
     <div class="container">
         <div class="container-box">
             <div class="logo">
@@ -18,10 +20,8 @@
                 <p>Мы с радостью проконсультируем Вас по продукту и предложим подходящий варинат решения!</p>
                 <div class="form-box">
 
-
-
                     <form id="form" action="/">
-                        <div class="input-control">
+                        <div class="input-control ">
                             <label for="surname">Фамилия</label>
                             <input id="surname" name="surname" type="text" placeholder="Иванов">
                             <div class="error"></div>
@@ -40,35 +40,48 @@
                         </div>
 
                         <div class="input-control">
-                            <label for="phone">Телефон</label>
-                            <input type="text" name="phone" placeholder="+7 (XXX) XXX XX - XX" maxlength="13"
-                                id="phone">
-                            <div class="error"></div>
-                        </div>
-
-
-                        <div class="input-control">
                             <div class="select-wrapper">
                                 <p>Город</p>
                                 <select id="select" class="select">
-                                    <option placeholder="+7 (XXX) XXX XX - XX">Москва</option>
+                                    <option value="" disabled selected>Выберите город</option>
+                                    <option>Москва</option>
                                     <option>Санкт-Петербург</option>
                                 </select>
                                 <div class="error"></div>
                             </div>
                         </div>
 
-                        <!-- <div class="input-control">
-                            <input type="checkbox" id="checkConfirmation">
-                            <label for="checkConfirmation" class="checkConfirmation">Нажимая кнопку «отправить», вы даете согласие на обработку <span>персональных данных.</span></label>
-                        </div> -->
-                        <button type="submit">Отправить</button>
+                        <div class="input-control">
+                            <label for="phone">Телефон</label>
+                            <input type="text" id="phone" name="phone" placeholder="+7 (XXX) XXX XX - XX" maxlength="13"
+                                id="phone">
+                            <div class="error  errorPhone"></div>
+                        </div>
+
+                        <div className="input-control" id="form-check">
+                            <input type="checkbox" className="form-check-input" id="check" />
+                            <label for="check1">
+                                <p>Нажимая кнопку «отправить», вы даете согласие на обработку
+                                    <span>персональных данных.</span>
+                                </p>
+                            </label>
+                        </div>
+
+                        <div class="container__file ">
+                            <input id="file-input" type="file" multiple />
+                            <div class="container__file_column">
+                                <label for="file-input" class="input__file-button">
+                                    <img src="./img/clip.png" style="width: 30px; height: 15px;" />
+                                    Прикрепите документы о мед.образований
+                                </label>
+                                <!-- <div id="num-of-files">No files choosen</div> -->
+                                <ul id="files-list">
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="button" type="submit">Отправить</button>
                     </form>
-
-
-
-
-
 
                 </div>
             </div>

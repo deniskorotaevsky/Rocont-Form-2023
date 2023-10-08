@@ -2,7 +2,6 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const surname = document.getElementById('surname');
 const fathername = document.getElementById('fathername');
-const checkConfirmation = document.getElementById('checkConfirmation');
 
 let phone = document.querySelector('#phone');
 
@@ -29,6 +28,7 @@ const validateInputs = () => {
     const usernameValue = username.value.trim();
     const surnameValue = surname.value.trim();
     const fathernameValue = fathername.value.trim();
+    var phoneValue = phone.value;
 
     if (surnameValue === '') {
         setError(surname);
@@ -48,12 +48,36 @@ const validateInputs = () => {
         setSuccess(fathername);
     }
 
-    if (!/^\+\d*$/.test(phone.value)) {
+    var re = /^[\d\+][\d\(\)\ -]{4,14}\d$/;
+    var valid = re.test(phoneValue);
+    if (!valid) {
         setError(phone);
+        document.querySelector('.errorPhone').innerHTML = 'Телефон введен некорректно';
     } else {
         setSuccess(phone);
     }
 };
 
+let fileInput = document.getElementById("file-input");
+let fileList = document.getElementById("files-list");
+let numOfFiles = document.getElementById("num-of-files");
 
+const comment = [];
 
+fileInput.addEventListener("change", () => {
+    let value = fileInput.value;
+    comment.push(value);
+    draw()
+})
+
+function draw() {
+    let out = '';
+    for (let i = 0; i < comment.length; i++) {
+        out += `
+        <div class="input-file-li_row">
+        <img src="./img/basket.png" /> <li>${comment[i]}</li>
+        </div>
+        `
+    }
+    fileList.innerHTML = out
+}
