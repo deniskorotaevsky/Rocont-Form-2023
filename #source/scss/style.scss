@@ -83,7 +83,7 @@ h6 {
     font-weight: inherit;
 }
 
-// // //
+//
 body {
     width: auto;
     height: auto;
@@ -100,6 +100,7 @@ body {
         align-items: center;
         height: 100vh;
         padding: 53px 0;
+        max-width: 1047px / 1920px *100%;
 
         .logo {
             display: flex;
@@ -108,6 +109,7 @@ body {
 
             img {
                 height: 90vh;
+                width: auto;
             }
         }
 
@@ -132,15 +134,32 @@ body {
                     margin-top: 30px;
                     border-radius: 5px;
 
-                    button {
+                    .button {
                         padding: 15px 54px;
-                        color: #ABABAB;
-                        background: none;
-                        border: none;
+                        display: block;
+                        min-width: 210px;
                         border-radius: 5px;
                         border: 1px solid #00BCD0;
-                        cursor: pointer;
+                        background: none;
+                        color: #000000;
                         font-size: 20px;
+                        transition: background-color 0.2s linear;
+                        background-image: linear-gradient(#00BCD0, #00BCD0);
+                        background-position: 0% 100%;
+                        background-repeat: no-repeat;
+                        background-size: 0% 100%;
+                        transition: background-size .5s, color .5s;
+
+                        &:not([disabled]):hover {
+                            background-size: 100% 100%;
+                            color: #fff;
+                        }
+
+                        &:disabled {
+                            opacity: 0.5;
+                            cursor: not-allowed;
+                            color: #000000;
+                        }
                     }
 
                     .input-control.error input {
@@ -258,7 +277,6 @@ body {
                         label {
                             display: flex;
                             position: relative;
-                            color: #d10000;
                         }
 
                         .container__file_column {
@@ -269,19 +287,24 @@ body {
                                 margin-right: 13px;
                             }
 
-                            .files-list {
-                                height: 40px;
+                            #files-list {
+                                display: flex;
+                                flex-wrap: wrap;
+                                width: 400px;
                                 overflow: auto;
-                                font-size: 15px;
+                                height: 20px;
+                                margin-top: 10px;
                             }
 
                             .input-file-li_row {
                                 display: flex;
-                                margin: 5px 0;
-                                align-items: center;
+                                width: 190px;
+                                height: 20px;
 
                                 li {
-                                    margin: 5px 0;
+                                    height: 15px;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
                                 }
 
                                 & img {
@@ -339,3 +362,21 @@ body {
         }
     }
 }
+
+// .animation {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     width: 490px;
+//     height: 974px;
+//     border: 1px solid grey;
+//     margin: 0 auto;
+// h1 {
+//     font-size: 50px;
+//     width: 302px;
+//     text-align: center;
+//     margin-top: 19px;
+
+// }
+// }

@@ -5,7 +5,7 @@
     <title>Rocont Form 2023</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-
+  
 </head>
 
 <body>
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="container-box">
             <div class="logo">
-                <img src="./img/logo.png" />
+                <img src="./resources/logo.png" />
             </div>
             <div class="container-form">
                 <h1>Стать партнером</h1>
@@ -21,45 +21,48 @@
                 <div class="form-box">
 
                     <form id="form" action="/">
-                        <div class="input-control ">
+
+                        <div class="input-control">
                             <label for="surname">Фамилия</label>
-                            <input id="surname" name="surname" type="text" placeholder="Иванов">
+                            <input id="surname" name="surname" type="text" placeholder="Иванов" required>
                             <div class="error"></div>
                         </div>
 
                         <div class="input-control">
                             <label for="username">Имя</label>
-                            <input id="username" name="username" type="text" placeholder="Иван">
+                            <input id="username" name="username" type="text" placeholder="Иван" required>
                             <div class="error"></div>
                         </div>
 
                         <div class="input-control">
                             <label for="fathername">Отчество</label>
-                            <input id="fathername" name="fathername" type="text" placeholder="Иванович">
+                            <input id="fathername" name="fathername" type="text" placeholder="Иванович" required>
                             <div class="error"></div>
                         </div>
 
                         <div class="input-control">
                             <div class="select-wrapper">
                                 <p>Город</p>
-                                <select id="select" class="select">
+                                <select id="select" class="select" name="city" required>
                                     <option value="" disabled selected hidden>Выберите город</option>
-                                    <option>Москва</option>
-                                    <option>Санкт-Петербург</option>
+                                    <option value="Moskow">Москва</option>
+                                    <option value="Saint Petersburg">Санкт-Петербург</option>
                                 </select>
                                 <div class="error"></div>
                             </div>
                         </div>
 
-                        <div class="input-control">
-                            <label for="phone">Телефон</label>
-                            <input type="text" id="phone" name="phone" placeholder="+7 (XXX) XXX XX - XX" maxlength="13"
-                                id="phone">
-                            <div class="error  errorPhone"></div>
-                        </div>
+                        <label>
+                            <div class="input-control">
+                                <label for="phone">Телефон</label>
+                                <input type="text" id="phone" name="phone" placeholder="+7 (XXX) XXX XX - XX"
+                                    maxlength="13" id="phone" required>
+                                <div class="error  errorPhone"></div>
+                            </div>
+                        </label>
 
                         <div className="input-control" id="form-check">
-                            <input type="checkbox" className="form-check-input" id="check" />
+                            <input type="checkbox" name="check" className="form-check-input" id="check1" value="1"  required/>
                             <label for="check1">
                                 <p>Нажимая кнопку «отправить», вы даете согласие на обработку
                                     <span>персональных данных.</span>
@@ -68,24 +71,29 @@
                         </div>
 
                         <div class="container__file ">
-                            <input id="file-input" type="file" multiple />
+                            <input id="file-input" type="file" multiple name="documentation" required />
                             <div class="container__file_column">
                                 <label for="file-input" class="input__file-button">
-                                    <img src="./img/clip.png" style="width: 30px; height: 15px;" />
+                                    <img src="./resources/clip.png" style="width: 30px; height: 15px;" />
                                     Прикрепите документы о мед.образований
                                 </label>
-                                <!-- <div id="num-of-files">No files choosen</div> -->
                                 <ul id="files-list">
                                 </ul>
                             </div>
                         </div>
 
-                        <button class="button" type="submit">Отправить</button>
+                        <button class="button" type="submit" disabled>Отправить</button>
                     </form>
-
                 </div>
             </div>
         </div>
+
+        <!-- <div class="animation">
+            <video src="./resources/Animation - 1696259641108.mp4" type="video/mp4" poster="./Animation - 1696259641108_PosterImage.png" width="150" height="150" loop autoplay>
+                Sorry, your browser doesn't support HTML5 video tag.
+            </video>
+            <h1>Заявка отправлена</h1>
+        </div> -->
     </div>
     <script src="./js/script.js"></script>
 </body>
