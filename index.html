@@ -5,7 +5,10 @@
     <title>Rocont Form 2023</title>
     <link rel="stylesheet" href="css/style.css" />
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -13,7 +16,7 @@
     <div class="container">
         <div class="container-box">
             <div class="logo">
-                <img src="./resources/logo.png" />
+                <img src="./images/logo.png" alt="/" />
             </div>
             <div class="container-form">
                 <h1>Стать партнером</h1>
@@ -62,7 +65,8 @@
                         </label>
 
                         <div className="input-control" id="form-check">
-                            <input type="checkbox" name="check" className="form-check-input" id="check1" value="1"  required/>
+                            <input type="checkbox" name="check" className="form-check-input" id="check1" value="1"
+                                required />
                             <label for="check1">
                                 <p>Нажимая кнопку «отправить», вы даете согласие на обработку
                                     <span>персональных данных.</span>
@@ -74,7 +78,7 @@
                             <input id="file-input" type="file" multiple name="documentation" required />
                             <div class="container__file_column">
                                 <label for="file-input" class="input__file-button">
-                                    <img src="./resources/clip.png" style="width: 30px; height: 15px;" />
+                                    <img src="./images/clip.png" style="width: 30px; height: 15px;" alt="/" />
                                     Прикрепите документы о мед.образований
                                 </label>
                                 <ul id="files-list">
@@ -86,15 +90,16 @@
                     </form>
                 </div>
             </div>
-        </div>
 
-        <!-- <div class="animation">
-            <video src="./resources/Animation - 1696259641108.mp4" type="video/mp4" poster="./Animation - 1696259641108_PosterImage.png" width="150" height="150" loop autoplay>
-                Sorry, your browser doesn't support HTML5 video tag.
-            </video>
-            <h1>Заявка отправлена</h1>
-        </div> -->
+            <div class="animation">
+                <video src="./images/Animation - 1696259641108.mp4" muted playsinline type="video/mp4" width="150" height="150" loop autoplay>
+                    Sorry, your browser doesn't support HTML5 video tag.
+                </video>
+                <h1>Заявка отправлена</h1>
+            </div>
+        </div>
     </div>
+
     <script src="./js/script.js"></script>
 </body>
 

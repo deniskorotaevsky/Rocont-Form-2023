@@ -8,6 +8,7 @@ let phone = document.querySelector('#phone');
 form.addEventListener('submit', e => {
     e.preventDefault();
     validateInputs();
+    toggleLoader()
 });
 
 const setError = (element) => {
@@ -92,13 +93,18 @@ function draw() {
     for (let i = 0; i < comment.length; i++) {
         out += `
         <div class="input-file-li_row" id="buttonBusket_${i}" onclick="deleteCurrentFile(this)">
-                <img src="./resources/basket.png" />
+                <img src="./images/basket.png" alt="/"/>
                 <li>${comment[i]}</li>
         </div>
         `
     }
     fileList.innerHTML = out
 };
+
+const toggleLoader = () => {
+    document.querySelector('.container-form').classList.add('remove');
+    document.querySelector('.animation').classList.add('animationAdd');
+}
 
 form.addEventListener('submit', validateInputs)
 form.addEventListener('input', checkValidity)
