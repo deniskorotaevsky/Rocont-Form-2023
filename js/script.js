@@ -8,6 +8,7 @@ let phone = document.querySelector('#phone');
 form.addEventListener('submit', e => {
     e.preventDefault();
     validateInputs();
+    toggleLoader()
 });
 
 const setError = (element) => {
@@ -23,6 +24,12 @@ const setSuccess = (element) => {
     inputControl.classList.add('success');
     inputControl.classList.remove('error');
 };
+
+function checkValidity(event) {
+    const formNode = event.target.form
+    const isValid = formNode.checkValidity()
+    formNode.querySelector('button').disabled = !isValid
+}
 
 const validateInputs = () => {
     const usernameValue = username.value.trim();
@@ -74,9 +81,9 @@ fileInput.addEventListener('change', function () {
 
 function deleteCurrentFile(thisElement) {
     let currentIndex = thisElement.id;
-    let crop = currentIndex.split('_')[1];
-    if (crop <= comment.length) {
-        comment.splice(crop, 1)
+    let el = currentIndex.split('_')[1];
+    if (el <= comment.length) {
+        comment.splice(el, 1)
     }
     draw()
 }
@@ -86,10 +93,19 @@ function draw() {
     for (let i = 0; i < comment.length; i++) {
         out += `
         <div class="input-file-li_row" id="buttonBusket_${i}" onclick="deleteCurrentFile(this)">
-                <img src="./img/basket.png" />
+                <img src="./images/basket.png" alt="/"/>
                 <li>${comment[i]}</li>
         </div>
         `
     }
     fileList.innerHTML = out
 };
+
+const toggleLoader = () => {
+    document.querySelector('.container-form').classList.add('remove');
+    document.querySelector('.animation').classList.add('animationAdd');
+}
+
+form.addEventListener('submit', validateInputs)
+form.addEventListener('input', checkValidity)
+form.querySelector('button').disabled = true;
