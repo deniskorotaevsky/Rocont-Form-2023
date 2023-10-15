@@ -2,8 +2,7 @@ const form = document.getElementById('form');
 const username = document.getElementById('username');
 const surname = document.getElementById('surname');
 const fathername = document.getElementById('fathername');
-
-let phone = document.querySelector('#phone');
+const phone = document.querySelector('#phone');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -74,7 +73,6 @@ const comment = [];
 fileInput.addEventListener('change', function () {
     for (let i = 0; i < fileInput.files.length; i++) {
         comment.push(fileInput.files[i].name);
-        console.log(fileInput.files[i].name)
         draw()
     }
 });

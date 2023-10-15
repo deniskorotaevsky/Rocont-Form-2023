@@ -2,13 +2,13 @@
 <html lang="ru">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rocont Form 2023</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -16,7 +16,6 @@
     <div class="container">
         <div class="container-box">
             <div class="logo">
-                <img src="./images/logo.png" alt="/" />
             </div>
             <div class="container-form">
                 <h1>Стать партнером</h1>
@@ -64,6 +63,18 @@
                             </div>
                         </label>
 
+                        <div class="container__file ">
+                            <input id="file-input" type="file" multiple name="documentation" required />
+                            <div class="container__file_column">
+                                <label for="file-input">
+                                    <img src="./images/clip.png" style="width: 30px; height: 15px;" alt="/" />
+                                    Прикрепите документы о мед.образований
+                                </label>
+                                <ul id="files-list">
+                                </ul>
+                            </div>
+                        </div>
+
                         <div className="input-control" id="form-check">
                             <input type="checkbox" name="check" className="form-check-input" id="check1" value="1"
                                 required />
@@ -74,25 +85,14 @@
                             </label>
                         </div>
 
-                        <div class="container__file ">
-                            <input id="file-input" type="file" multiple name="documentation" required />
-                            <div class="container__file_column">
-                                <label for="file-input" class="input__file-button">
-                                    <img src="./images/clip.png" style="width: 30px; height: 15px;" alt="/" />
-                                    Прикрепите документы о мед.образований
-                                </label>
-                                <ul id="files-list">
-                                </ul>
-                            </div>
-                        </div>
-
                         <button class="button" type="submit" disabled>Отправить</button>
                     </form>
                 </div>
             </div>
 
             <div class="animation">
-                <video src="./images/Animation - 1696259641108.mp4" muted playsinline type="video/mp4" width="150" height="150" loop autoplay>
+                <video src="./images/Animation - 1696259641108.mp4" muted playsinline type="video/mp4" width="150"
+                    height="150" loop autoplay>
                     Sorry, your browser doesn't support HTML5 video tag.
                 </video>
                 <h1>Заявка отправлена</h1>
