@@ -5,6 +5,21 @@
     border: 0;
 }
 
+@mixin font {
+    content: '';
+    position: absolute;
+    display: block;
+    pointer-events: none;
+}
+
+@mixin form {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 15px;
+    width: 100%;
+}
+
 *,
 *:before,
 *:after {
@@ -98,22 +113,20 @@ body {
     align-items: center;
     height: 100vh;
 
-
     .container-box {
         display: flex;
-        justify-content: center;
 
         .logo {
-            width: 550px;
-            height: auto;
-
-            img {
-                width: auto;
-            }
+            width: 28.6vw;
+            max-height: 100vh;
+            align-items: center;
+            background: transparent url('../../images/logo.png') 1% 0 no-repeat;
+            background-size: cover;
         }
 
         .container-form {
-            width: 437px;
+            width: 22.76vw;
+            min-width: 363px;
             margin-left: 60px;
             height: auto;
             margin-top: 56px;
@@ -127,16 +140,16 @@ body {
             }
 
             >p {
-                width: 363px;
                 width: auto;
+                max-width: 363px;
                 font-weight: 300;
-                width: 363px;
                 line-height: 20px;
             }
 
             .form-box {
                 #form {
-                    width: 400px;
+                    width: 20.83vw;
+                    min-width: 363px;
                     margin-top: 30px;
                     border-radius: 5px;
                     margin-top: 30px;
@@ -189,12 +202,8 @@ body {
                         }
 
                         input {
-                            border: 2px solid #f0f0f0;
-                            border-radius: 4px;
-                            display: block;
-                            font-size: 15px;
+                            @include form;
                             padding: 13px;
-                            width: 100%;
 
                             &:focus {
                                 outline: 0;
@@ -225,38 +234,33 @@ body {
                         .select-wrapper {
                             position: relative;
 
+                            >p {
+                                margin-bottom: 9px;
+                            }
+
                             &:before {
-                                content: '';
-                                position: absolute;
-                                top: 35px / 77px * 100%;
+                                @include font();
+                                top: 47.45%;
                                 right: 12px;
-                                display: block;
                                 border-top: 1px solid #000;
                                 width: 28px;
                                 height: 1px;
-                                pointer-events: none;
                             }
 
                             &:after {
-                                content: '';
-                                position: absolute;
-                                top: 45px / 77px * 100%;
+                                @include font();
+                                top: 60.44%;
                                 right: 17px;
-                                display: block;
                                 border-bottom: 1px solid black;
                                 width: 18px;
                                 height: 1px;
-                                pointer-events: none;
                             }
 
                             select {
-                                border: 2px solid #f0f0f0;
-                                border-radius: 4px;
-                                display: block;
-                                font-size: 15px;
+                                @include form;
                                 padding: 15px;
-                                width: 100%;
                                 appearance: none;
+                                overflow: hidden;
 
                                 option {
                                     color: #000;
@@ -279,7 +283,6 @@ body {
 
                     .container__file {
                         display: flex;
-                        margin: 20px;
                         margin-left: 0;
 
                         [type="file"] {
@@ -295,6 +298,7 @@ body {
                             display: flex;
                             flex-direction: column;
 
+
                             img {
                                 margin-right: 13px;
                             }
@@ -304,14 +308,17 @@ body {
                                 flex-wrap: wrap;
                                 width: 400px;
                                 overflow: auto;
-                                height: 40px;
-                                margin-top: 10px;
+                                height: 25px;
+                                margin-top: 15px;
+                                margin-bottom: 5px;
+                                align-items: center;
+                                line-height: 1.1;
                             }
 
                             .input-file-li_row {
                                 display: flex;
                                 width: 190px;
-                                height: 20px;
+                                height: 25px;
 
                                 li {
                                     height: 15px;
@@ -336,7 +343,6 @@ body {
 
                         label {
                             display: flex;
-                            align-items: center;
                             cursor: pointer;
 
                             &:before {
@@ -379,7 +385,7 @@ body {
             align-items: center;
             justify-content: center;
             width: 497px;
-            height: 974px;
+            height: 100vh;
             margin: 0;
 
             h1 {
@@ -387,8 +393,8 @@ body {
                 width: 302px;
                 text-align: center;
                 margin-top: 19px;
+                font-weight: 300;
             }
-
         }
 
         .animationAdd {
@@ -397,6 +403,149 @@ body {
 
         .remove {
             display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        justify-content: flex-start;
+        overflow: hidden;
+
+        .container-box {
+
+            .logo {
+                width: 43.48vw;
+                height: 1024px;
+                background: transparent url('../../images/logo.png') 22%;
+            }
+
+            .container-form {
+                max-width: 363px;
+                margin-left: 32px;
+                padding: 0;
+                margin-top: 99px;
+
+                h1 {
+                    font-size: 35px;
+                    margin: 0px 0 15px;
+                    line-height: 46px;
+                }
+
+                .form-box {
+                    #form {
+                        max-width: 363px;
+
+
+                        .button {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .animation {
+                width: 393px;
+                margin-left: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+
+    .container {
+        justify-content: center;
+
+        .container-box {
+            width: 340px;
+            align-items: center;
+
+            .logo {
+                display: none;
+            }
+
+            .container-form {
+                margin-top: 0;
+                max-width: 340px;
+                margin-left: 0;
+
+                h1 {
+                    margin-bottom: 10px;
+                }
+
+                >p {
+                    width: 340px;
+                    font-size: 14px;
+                }
+
+                .form-box {
+                    #form {
+                        margin-top: 15px;
+
+                        .button {
+                            margin-top: 30px;
+                        }
+
+                        .container__file {
+
+                            .container__file_column {
+                                width: 340px;
+
+                                label {
+                                    font-size: 14px;
+                                }
+
+                                img {
+                                    margin-right: 8px;
+                                }
+                            }
+                        }
+
+                        .input-control {
+                            margin-bottom: 5px;
+
+                            input {
+                                width: 340px;
+                                padding: 13px;
+                            }
+
+                            .select-wrapper {
+                                >p {
+                                    margin-bottom: 3px;
+                                }
+
+                                &:before {
+                                    right: 39px;
+                                }
+
+                                &:after {
+                                    right: 44px;
+                                }
+
+                                select {
+                                    width: 340px;
+                                }
+                            }
+
+                            label {
+                                margin-bottom: 3px;
+                            }
+                        }
+
+                        .button {
+                            width: 338px;
+                        }
+                    }
+                }
+            }
+
+            .animation {
+                h1 {
+                    font-size: 40px;
+                }
+            }
         }
     }
 }
